@@ -1,0 +1,29 @@
+{
+  "name": "project3-wiese",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server/index.js",
+    "dev": "nodemon ./src/server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaphaelHuber/Project3-Wiese.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaphaelHuber/Project3-Wiese/issues"
+  },
+  "homepage": "https://github.com/RaphaelHuber/Project3-Wiese#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.15",
+    "morgan": "^1.9.1"
+  }
+}
