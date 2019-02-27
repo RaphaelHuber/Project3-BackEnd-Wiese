@@ -24,6 +24,7 @@ app.use(cookieParser());
 // Endpoints
 app.use('/', require('../endpoints/rootRoutes'));
 app.use('/users', require('../endpoints/userRoutes'));
+app.use('/projects', require('../endpoints/projectRoutes'));
 
 // Starting the server.
 app.listen(HTTP_PORT, () => {
