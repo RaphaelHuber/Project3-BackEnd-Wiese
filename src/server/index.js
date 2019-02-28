@@ -1,4 +1,5 @@
 require('dotenv').config();
+const cors = require('cors');
 
 // Server core
 const express = require('express');
@@ -20,6 +21,12 @@ const app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cookieParser());
+
+// CORS
+app.use(cors({
+  credentials: true,
+  origin: ['http://localhost:8080'] // React app URL
+}));
 
 // Endpoints
 app.use('/', require('../endpoints/rootRoutes'));
