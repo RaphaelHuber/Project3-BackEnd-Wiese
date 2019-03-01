@@ -2,16 +2,18 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
+  role: { type: String, enum: ['Regular', 'Admin'], default: 'Regular' },
   username: String,
   email: String,
+  password: String,
   firstName: String,
   lastName: String,
-  birthDate: Date,
-  role: { type: String, enum: ['Investor', 'Company', 'Admin'] },
   document: Number,
+  birthDate: Date,
+  address: String,
   paymentInfo: {
-    bank: { type: Number, min: 100, max: 200 },
-    account: { type: Number, min: 8000, max: 9000 }
+    bank: Number,
+    account: Number
   },
   investments: [{ type: Schema.Types.ObjectId, ref: 'Investment' }],
   projects: [{ type: Schema.Types.ObjectId, ref: 'Project' }]

@@ -14,8 +14,11 @@ router.get('/', (req, res, next) => {
 
 // POST
 router.post('/', (req, res, next) => {
-  const newProject = new Project(req.body);
-  newProject.save()
+  Project.create({
+    owner: req.user._id,
+    name: req.body.name,
+    country: req.body.country
+  })
     .then((projectCreated) => {
       res.status(201).json(projectCreated);
     })
@@ -24,6 +27,9 @@ router.post('/', (req, res, next) => {
       res.status(500).json({ msg: 'internal server error' });
     });
 });
+
+// const newProject = new Project(req.body);
+// newProject.save()
 
 router.put('/:id', (req, res, next) => {
   Project.findByIdAndUpdate({ _id: req.params.id }, req.body)
