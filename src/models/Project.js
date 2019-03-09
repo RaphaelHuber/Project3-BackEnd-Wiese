@@ -15,14 +15,12 @@ const projectSchema = new Schema({
   },
   minimumAmount: Number,
   targetAmount: Number,
+  raisedAmount: { type: Number, default: 0 },
   projectStatus: { type: String, enum: ['Under review', 'Approved', 'Rejected']},
+  expectedReturn: Number,
   investmentPeriod: Number,
-  repayment: {
-    expectedReturn: Number,
-    gracePeriod: Date,
-    years: Number,
-    periodicity: Number
-  },
+  paymentPeriod: Number,
+  periodicity: Number,
   pictures: [String],
   financials: [String]
 }, {
