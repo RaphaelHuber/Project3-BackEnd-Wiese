@@ -16,6 +16,7 @@ const projectSchema = new Schema({
   minimumAmount: Number,
   targetAmount: Number,
   raisedAmount: { type: Number, default: 0 },
+  minimumInvestment: Number,
   projectStatus: { type: String, enum: ['Under review', 'Approved', 'Rejected']},
   expectedReturn: Number,
   investmentPeriod: Number,
