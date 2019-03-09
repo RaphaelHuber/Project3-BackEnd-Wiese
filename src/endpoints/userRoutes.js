@@ -9,18 +9,6 @@ router.get('/', (req, res, next) => {
     });
 });
 
-// router.post('/', (req, res, next) => {
-//   const newUser = new User(req.body);
-//   newUser.save()
-//     .then((userCreated) => {
-//       res.status(201).json(userCreated);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json({ msg: 'internal server error' });
-//     });
-// });
-
 router.put('/:id', (req, res, next) => {
   User.findByIdAndUpdate({ _id: req.params.id }, req.body)
     .then(() => {

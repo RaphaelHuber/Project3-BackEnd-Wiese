@@ -4,7 +4,7 @@ const Project = require('./src/models/Project');
 mongoose.connect('mongodb://localhost/wiese');
 
 const projects = [{
-  company: '5c7695a7d7340b282f52ec68',
+  owner: '5c7695a7d7340b282f52ec68',
   investments: [],
   name: 'Power Plant',
   country: 'Kanto',
@@ -17,18 +17,16 @@ const projects = [{
   },
   minimumAmount: 2000000,
   targetAmount: 10000000,
+  minimumInvestment: 50,
   projectStatus: 'Approved',
+  expectedReturn: 0.1,
   investmentPeriod: 12,
-  repayment: {
-    expectedReturn: 0.1,
-    gracePeriod: 12,
-    years: 20,
-    periodicity: 12
-  },
+  paymentPeriod: 360,
+  periodicity: 12,
   pictures: ['https://cdn.bulbagarden.net/upload/thumb/4/48/Power_Plant_interior_FRLG.png/735px-Power_Plant_interior_FRLG.png'],
   financials: [String]
 }, {
-  company: '5c7695a7d7340b282f52ec68',
+  owner: '5c7695a7d7340b282f52ec68',
   investments: [],
   name: 'Shadow Moses',
   country: 'Alaska',
@@ -41,18 +39,16 @@ const projects = [{
   },
   minimumAmount: 30000000,
   targetAmount: 10000000,
+  minimumInvestment: 100,
   projectStatus: 'Under review',
-  investmentPeriod: 24,
-  repayment: {
-    expectedReturn: 0.05,
-    gracePeriod: 36,
-    years: 10,
-    periodicity: 12
-  },
+  expectedReturn: 0.15,
+  investmentPeriod: 6,
+  paymentPeriod: 180,
+  periodicity: 6,
   pictures: ['https://files.gamebanana.com/img/ss/maps/530-90_57f0d41ad0a88.jpg'],
   financials: [String]
 }, {
-  company: '5c7695a7d7340b282f52ec68',
+  owner: '5c7695a7d7340b282f52ec68',
   investments: [],
   name: 'Sionis Steel Mill',
   country: 'Gotham',
@@ -65,18 +61,16 @@ const projects = [{
   },
   minimumAmount: 5000000,
   targetAmount: 8000000,
+  minimumInvestment: 200,
   projectStatus: 'Rejected',
+  expectedReturn: 0.06,
   investmentPeriod: 12,
-  repayment: {
-    expectedReturn: 0.15,
-    gracePeriod: 36,
-    years: 15,
-    periodicity: 12
-  },
+  paymentPeriod: 480,
+  periodicity: 12,
   pictures: ['https://images.pexels.com/photos/140234/pexels-photo-140234.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
   financials: [String]
 }, {
-  company: '5c7695a7d7340b282f52ec68',
+  owner: '5c7695a7d7340b282f52ec68',
   investments: [],
   name: 'Stark Factory',
   country: 'USA',
@@ -89,14 +83,12 @@ const projects = [{
   },
   minimumAmount: 15000000,
   targetAmount: 15000000,
+  minimumInvestment: 20,
   projectStatus: 'Under review',
+  expectedReturn: 0.09,
   investmentPeriod: 12,
-  repayment: {
-    expectedReturn: 0.08,
-    gracePeriod: 12,
-    years: 20,
-    periodicity: 12
-  },
+  paymentPeriod: 240,
+  periodicity: 12,
   pictures: ['http://static.asiawebdirect.com/m/phuket/portals/kosamui-com/homepage/beaches/pagePropertiesImage/samui-beaches.jpg.jpg'],
   financials: [String]
 }
