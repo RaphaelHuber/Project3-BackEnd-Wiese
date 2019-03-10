@@ -4,11 +4,25 @@ const Project = require('../models/Project.js');
 
 router.get('/', (req, res, next) => {
   Project.find()
+    // .populate('owner')
     .then((allProjects) => {
+      console.log('BUUUU', allProjects);
       res.status(200).json(allProjects);
     })
     .catch((err) => {
       res.json(err);
+    });
+});
+
+// GET one project
+router.get('/:id', (req, res, next) => {
+  Project.findOne({ _id: req.params.id })
+    .then((oneProject) => {
+      res.status(200).json(oneProject);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ msg: 'internal server error' });
     });
 });
 
@@ -27,9 +41,6 @@ router.post('/', (req, res, next) => {
       res.status(500).json({ msg: 'internal server error' });
     });
 });
-
-// const newProject = new Project(req.body);
-// newProject.save()
 
 router.put('/:id', (req, res, next) => {
   Project.findByIdAndUpdate({ _id: req.params.id }, req.body)
