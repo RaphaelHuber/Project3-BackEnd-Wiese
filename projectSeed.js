@@ -4,7 +4,7 @@ const Project = require('./src/models/Project');
 mongoose.connect('mongodb://localhost/wiese');
 
 const projects = [{
-  owner: '5c7695a7d7340b282f52ec68',
+  owner: '5c794ec4d35c9c40b6c9fcc1',
   investments: [],
   name: 'Power Plant',
   country: 'Kanto',
@@ -26,7 +26,7 @@ const projects = [{
   pictures: ['https://cdn.bulbagarden.net/upload/thumb/4/48/Power_Plant_interior_FRLG.png/735px-Power_Plant_interior_FRLG.png'],
   financials: [String]
 }, {
-  owner: '5c7695a7d7340b282f52ec68',
+  owner: '5c794ec4d35c9c40b6c9fcc1',
   investments: [],
   name: 'Shadow Moses',
   country: 'Alaska',
@@ -48,7 +48,7 @@ const projects = [{
   pictures: ['https://files.gamebanana.com/img/ss/maps/530-90_57f0d41ad0a88.jpg'],
   financials: [String]
 }, {
-  owner: '5c7695a7d7340b282f52ec68',
+  owner: '5c794ec4d35c9c40b6c9fcc1',
   investments: [],
   name: 'Sionis Steel Mill',
   country: 'Gotham',
@@ -70,7 +70,7 @@ const projects = [{
   pictures: ['https://images.pexels.com/photos/140234/pexels-photo-140234.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
   financials: [String]
 }, {
-  owner: '5c7695a7d7340b282f52ec68',
+  owner: '5c794ec4d35c9c40b6c9fcc1',
   investments: [],
   name: 'Stark Factory',
   country: 'USA',

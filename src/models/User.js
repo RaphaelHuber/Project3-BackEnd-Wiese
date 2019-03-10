@@ -11,6 +11,7 @@ const userSchema = new Schema({
   document: Number,
   birthDate: Date,
   address: String,
+  credit: Number,
   paymentInfo: {
     bank: Number,
     account: Number
