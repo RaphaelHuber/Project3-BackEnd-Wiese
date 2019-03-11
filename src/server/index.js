@@ -15,6 +15,7 @@ require('../configs/passport');
 
 // Database
 const connectionDB = require('../db/connection.js');
+
 connectionDB();
 
 // Server config.
