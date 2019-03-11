@@ -11,7 +11,7 @@ const userSchema = new Schema({
   document: Number,
   birthDate: Date,
   address: String,
-  credit: Number,
+  credit: { type: Number, default: 0 },
   paymentInfo: {
     bank: Number,
     account: Number
