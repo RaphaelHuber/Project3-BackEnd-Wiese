@@ -39,16 +39,16 @@ router.post('/', (req, res, next) => {
     });
 });
 
-// router.put('/:id', (req, res, next) => {
-//   Investment.findByIdAndUpdate({ _id: req.params.id }, req.body)
-//     .then(() => {
-//       res.status(200).end();
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json({ msg: 'internal server error' });
-//     });
-// });
+router.put('/:id', (req, res, next) => {
+  Investment.findByIdAndUpdate({ _id: req.params.id }, req.body)
+    .then(() => {
+      res.status(200).end();
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ msg: 'internal server error' });
+    });
+});
 
 // router.delete('/:id', (req, res, next) => {
 //   Investment.remove({ _id: req.params.id })

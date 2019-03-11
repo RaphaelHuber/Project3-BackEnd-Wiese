@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
+
 const { Schema } = mongoose;
 
 const projectSchema = new Schema({
   owner: { type: Schema.Types.ObjectId, ref: 'User' },
   investments: [{ type: Schema.Types.ObjectId, ref: 'Investment' }],
   name: String,
+  company: String,
   country: String,
-  energySource: { type: String, enum: ['Hydro', 'Solar', 'Wind', 'Bio', 'Other']},
+  energySource: { type: String, enum: ['Hydro', 'Solar', 'Wind', 'Bio', 'Other'] },
   description: String,
   responsiblePerson: {
     name: String,
