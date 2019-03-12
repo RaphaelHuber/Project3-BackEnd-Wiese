@@ -11,10 +11,8 @@ const userSchema = new Schema({
   birthDate: Date,
   address: String,
   credit: { type: Number, default: 0 },
-  paymentInfo: {
-    bank: Number,
-    account: Number
-  },
+  bank: Number,
+  account: Number,
   investments: [{ type: Schema.Types.ObjectId, ref: 'Investment' }],
   projects: [{ type: Schema.Types.ObjectId, ref: 'Project' }]
 }, {

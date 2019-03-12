@@ -4,7 +4,7 @@ const Project = require('../models/Project.js');
 
 router.get('/', (req, res, next) => {
   Project.find()
-    .populate('owner', 'name')
+    .populate('owner')
     .then((allProjects) => {
       console.log('BUUUU', allProjects);
       res.status(200).json(allProjects);
