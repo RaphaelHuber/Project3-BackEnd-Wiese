@@ -7,7 +7,7 @@ const projectSchema = new Schema({
   investments: [{ type: Schema.Types.ObjectId, ref: 'Investment' }],
   name: String,
   country: String,
-  energySource: { type: String, enum: ['Hydro', 'Solar', 'Wind', 'Bio', 'Other'] },
+  energySource: { type: String, enum: ['Hydro', 'Solar', 'Wind', 'Bio'] },
   description: String,
   responsiblePerson: {
     name: String,
@@ -18,12 +18,12 @@ const projectSchema = new Schema({
   targetAmount: Number,
   raisedAmount: { type: Number, default: 0 },
   minimumInvestment: Number,
-  projectStatus: { type: String, enum: ['Under review', 'Approved', 'Rejected']},
+  projectStatus: { type: String, enum: ['Under review', 'Approved', 'Rejected'], default: 'Approved'},
   expectedReturn: Number,
   investmentPeriod: Number,
   paymentPeriod: Number,
   periodicity: Number,
-  pictures: [String],
+  picture: String,
   financials: [String]
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
