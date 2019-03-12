@@ -6,8 +6,7 @@ const userSchema = new Schema({
   username: String,
   email: String,
   password: String,
-  firstName: String,
-  lastName: String,
+  name: String,
   document: Number,
   birthDate: Date,
   address: String,
@@ -22,6 +21,6 @@ const userSchema = new Schema({
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });
 
-const User = mongoose.model('user', userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
