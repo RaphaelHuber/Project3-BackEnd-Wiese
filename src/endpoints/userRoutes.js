@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
     });
 });
 
-router.put('/:id', (req, res, next) => {
+router.patch('/:id', (req, res, next) => {
   User.findByIdAndUpdate({ _id: req.params.id }, req.body)
     .then(() => {
       res.status(200).end();

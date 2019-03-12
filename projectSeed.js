@@ -96,7 +96,7 @@ const projects = [{
   pictures: ['http://static.asiawebdirect.com/m/phuket/portals/kosamui-com/homepage/beaches/pagePropertiesImage/samui-beaches.jpg.jpg'],
   financials: [String]
 }, {
-  owner: '5c85a73614daaac8d35979fe',
+  owner: '5c87adce41fafa2944f8da7d',
   investments: [],
   name: 'Solar for all',
   company: 'Novems',
@@ -119,7 +119,7 @@ const projects = [{
   pictures: ['https://news-media.energysage.com/wp-content/uploads/2018/10/10.17.2018_Floating-panels.jpg'],
   financials: [String]
 }, {
-  owner: '5c85a73614daaac8d35979fe',
+  owner: '5c87adce41fafa2944f8da7d',
   investments: [],
   name: 'Wind energy saving dolphins',
   company: 'NovaOnda',
@@ -142,7 +142,7 @@ const projects = [{
   pictures: ['https://3ohkdk3zdzcq1dul50oqjvvf-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/Wind-farm-Canada.jpg'],
   financials: [String]
 }, {
-  owner: '5c85a73614daaac8d35979fe',
+  owner: '5c87adce41fafa2944f8da7d',
   investments: [],
   name: 'Biomass changing lives',
   company: 'Saive',
