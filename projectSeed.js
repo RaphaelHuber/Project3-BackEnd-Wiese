@@ -4,7 +4,7 @@ const Project = require('./src/models/Project');
 mongoose.connect('mongodb://localhost/wiese');
 
 const projects = [{
-  owner: '5c794ec4d35c9c40b6c9fcc1',
+  owner: '5c85a73614daaac8d35979fe',
   investments: [],
   name: 'Mini-Hydro Plant',
   company: 'TheAwesomeCompany',
@@ -27,7 +27,7 @@ const projects = [{
   pictures: ['https://cdn.bulbagarden.net/upload/thumb/4/48/Power_Plant_interior_FRLG.png/735px-Power_Plant_interior_FRLG.png'],
   financials: [String]
 }, {
-  owner: '5c794ec4d35c9c40b6c9fcc1',
+  owner: '5c85a73614daaac8d35979fe',
   investments: [],
   name: 'Shadow Moses',
   company: 'TUA',
@@ -50,7 +50,7 @@ const projects = [{
   pictures: ['https://files.gamebanana.com/img/ss/maps/530-90_57f0d41ad0a88.jpg'],
   financials: [String]
 }, {
-  owner: '5c794ec4d35c9c40b6c9fcc1',
+  owner: '5c85a73614daaac8d35979fe',
   investments: [],
   name: 'Sionis Steel Mill',
   company: 'Halte',
@@ -73,7 +73,7 @@ const projects = [{
   pictures: ['https://images.pexels.com/photos/140234/pexels-photo-140234.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
   financials: [String]
 }, {
-  owner: '5c794ec4d35c9c40b6c9fcc1',
+  owner: '5c85a73614daaac8d35979fe',
   investments: [],
   name: 'Stark Factory',
   company: 'EveR',
