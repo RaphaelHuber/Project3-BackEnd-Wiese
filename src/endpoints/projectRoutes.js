@@ -4,9 +4,8 @@ const Project = require('../models/Project.js');
 
 router.get('/', (req, res, next) => {
   Project.find()
-    .populate('owner')
+    .populate('owner', 'username')
     .then((allProjects) => {
-      console.log('BUUUU', allProjects);
       res.status(200).json(allProjects);
     })
     .catch((err) => {
@@ -28,11 +27,9 @@ router.get('/:id', (req, res, next) => {
 
 // POST
 router.post('/', (req, res, next) => {
-  Project.create({
-    owner: req.user._id,
-    name: req.body.name,
-    country: req.body.country
-  })
+  console.log('AAAAAAAAAAAAAAAAAAAAAA', req.body);
+  const { name, country } = req.body;
+  Project.create({ name, country })
     .then((projectCreated) => {
       res.status(201).json(projectCreated);
     })
