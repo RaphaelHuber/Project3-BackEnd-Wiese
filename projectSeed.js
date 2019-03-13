@@ -4,7 +4,7 @@ const Project = require('./src/models/Project');
 mongoose.connect('mongodb://localhost/wiese');
 
 const projects = [{
-  owner: '5c87adce41fafa2944f8da7d',
+  owner: '5c85a73614daaac8d35979fe',
   investments: [],
   name: 'Mini-Hydro Plant',
   country: 'Kanto',
@@ -26,7 +26,7 @@ const projects = [{
   picture:'https://cdn.bulbagarden.net/upload/thumb/4/48/Power_Plant_interior_FRLG.png/735px-Power_Plant_interior_FRLG.png',
   financials: [String]
 }, {
-  owner: '5c87adce41fafa2944f8da7d',
+  owner: '5c85a73614daaac8d35979fe',
   investments: [],
   name: 'Shadow Moses',
   country: 'Alaska',
@@ -48,7 +48,7 @@ const projects = [{
   picture: 'https://files.gamebanana.com/img/ss/maps/530-90_57f0d41ad0a88.jpg',
   financials: [String]
 }, {
-  owner: '5c87adce41fafa2944f8da7d',
+  owner: '5c85a73614daaac8d35979fe',
   investments: [],
   name: 'Sionis Steel Mill',
   country: 'Gotham',
@@ -70,7 +70,7 @@ const projects = [{
   picture: 'https://images.pexels.com/photos/140234/pexels-photo-140234.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   financials: [String]
 }, {
-  owner: '5c87adce41fafa2944f8da7d',
+  owner: '5c85a73614daaac8d35979fe',
   investments: [],
   name: 'Stark Factory',
   country: 'USA',
@@ -92,7 +92,7 @@ const projects = [{
   picture: 'http://static.asiawebdirect.com/m/phuket/portals/kosamui-com/homepage/beaches/pagePropertiesImage/samui-beaches.jpg.jpg',
   financials: [String]
 }, {
-  owner: '5c87adce41fafa2944f8da7d',
+  owner: '5c85a73614daaac8d35979fe',
   investments: [],
   name: 'Solar for all',
   country: 'Maldives',
@@ -114,7 +114,7 @@ const projects = [{
   picture: 'https://news-media.energysage.com/wp-content/uploads/2018/10/10.17.2018_Floating-panels.jpg',
   financials: [String]
 }, {
-  owner: '5c87adce41fafa2944f8da7d',
+  owner: '5c85a73614daaac8d35979fe',
   investments: [],
   name: 'Wind energy saving dolphins',
   country: 'Brazil',
@@ -136,7 +136,7 @@ const projects = [{
   picture: 'https://3ohkdk3zdzcq1dul50oqjvvf-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/Wind-farm-Canada.jpg',
   financials: [String]
 }, {
-  owner: '5c87adce41fafa2944f8da7d',
+  owner: '5c85a73614daaac8d35979fe',
   investments: [],
   name: 'Biomass changing lives',
   country: 'Cuba',
