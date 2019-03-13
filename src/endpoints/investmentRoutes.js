@@ -21,12 +21,12 @@ router.post('/', (req, res, next) => {
     .then((investmentCreated) => {
       Project.findByIdAndUpdate(
         { _id: investmentCreated.project },
-        { $push: { investments: investmentCreated._id } }
+        { $push: { investments: investmentCreated._id }, $inc: { raisedAmount: investmentCreated.invAmount }}
       )
         .then(() => {
           User.findByIdAndUpdate(
             { _id: investmentCreated.investor },
-            { $push: { investments: investmentCreated._id } }
+            { $push: { investments: investmentCreated._id }, $inc: { credit: (investmentCreated.invAmount * (-1)) } }
           )
             .then(() => {
               res.status(201).json(investmentCreated);
