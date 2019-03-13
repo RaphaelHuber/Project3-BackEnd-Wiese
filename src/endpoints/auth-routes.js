@@ -11,14 +11,14 @@ authRoutes.post('/signup', (req, res, next) => {
   const { username, email, password } = req.body;
 
   if (!username || !email || !password) {
-    res.status(400).json({ message: 'Provide username, email and password' });
+    res.json({ message: 'Please provide a username, an email and a password' });
     return;
   }
 
-  // if (password.length < 8) {
-  //   res.status(400).json({ message: 'Please make your password at least 8 characters long for security purposes.' });
-  //   return;
-  // }
+  if (password.length < 8) {
+    res.json({ message: 'Please make your password at least 8 characters' });
+    return;
+  }
 
   User.findOne({ username }, (err, foundUser) => {
     if (err) {
@@ -27,7 +27,7 @@ authRoutes.post('/signup', (req, res, next) => {
     }
 
     if (foundUser) {
-      res.status(400).json({ message: 'Username taken. Choose another one.' });
+      res.json({ message: 'Username taken. Choose another one.' });
       return;
     }
 
@@ -38,7 +38,7 @@ authRoutes.post('/signup', (req, res, next) => {
       }
 
       if (foundEmail) {
-        res.status(400).json({ message: 'EMail taken. Choose another one.' });
+        res.json({ message: 'Email taken. Choose another one.' });
         return;
       }
 
@@ -53,7 +53,7 @@ authRoutes.post('/signup', (req, res, next) => {
 
       aNewUser.save((err) => {
         if (err) {
-          res.status(400).json({ message: 'Saving user to database went wrong.' });
+          res.json({ message: 'Saving user to database went wrong.' });
           return;
         }
 
@@ -99,14 +99,12 @@ authRoutes.post('/login', (req, res, next) => {
 });
 
 authRoutes.post('/logout', (req, res, next) => {
-  // req.logout() is defined by passport
   req.logout();
   res.status(200).json({ message: 'Log out success!' });
 });
 
 
 authRoutes.get('/loggedin', (req, res, next) => {
-  // req.isAuthenticated() is defined by passport
   if (req.isAuthenticated()) {
     res.status(200).json(req.user);
     return;
