@@ -6,17 +6,26 @@ const bcrypt = require('bcryptjs');
 
 const User = require('../models/User');
 
+function validateEmail(text) {
+  const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return emailPattern.test(text);
+}
 
 authRoutes.post('/signup', (req, res, next) => {
   const { username, email, password } = req.body;
 
-  if (!username || !email || !password) {
-    res.json({ message: 'Please provide a username, an email and a password' });
+  if (validateEmail(email) === false) {
+    res.json({ message: 'Please enter a valid E-Mail' });
     return;
   }
 
   if (password.length < 8) {
-    res.json({ message: 'Please make your password at least 8 characters long' });
+    res.json({ message: 'Please make your Password at least 8 characters long' });
+    return;
+  }
+
+  if (!username || !email || !password) {
+    res.json({ message: 'Please provide a Username, an E-Mail and a Password' });
     return;
   }
 
@@ -27,18 +36,18 @@ authRoutes.post('/signup', (req, res, next) => {
     }
 
     if (foundUser) {
-      res.json({ message: 'Username taken. Choose another one.' });
+      res.json({ message: 'This Username is already taken. Please choose another one.' });
       return;
     }
 
     User.findOne({ email }, (err, foundEmail) => {
       if (err) {
-        res.status(500).json({ message: 'Email check went bad.' });
+        res.status(500).json({ message: 'E-Mail check went bad.' });
         return;
       }
 
       if (foundEmail) {
-        res.json({ message: 'Email taken. Choose another one.' });
+        res.json({ message: 'E-Mail taken. Choose another one.' });
         return;
       }
 
@@ -80,12 +89,12 @@ authRoutes.post('/login', (req, res, next) => {
     }
 
     if (!username || !password) {
-      res.json({ message: 'Please provide a username and password' });
+      res.json({ message: 'Please provide a Username and Password' });
       return;
     }
 
     if (!theUser) {
-      res.json({ message: 'Username or password is wrong' });
+      res.json({ message: 'Your Username or Password is wrong' });
       return;
     }
 
