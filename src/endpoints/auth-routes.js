@@ -16,7 +16,7 @@ authRoutes.post('/signup', (req, res, next) => {
   }
 
   if (password.length < 8) {
-    res.json({ message: 'Please make your password at least 8 characters' });
+    res.json({ message: 'Please make your password at least 8 characters long' });
     return;
   }
 
@@ -64,8 +64,6 @@ authRoutes.post('/signup', (req, res, next) => {
             return;
           }
 
-          // Send the user's information to the frontend
-          // We can use also: res.status(200).json(req.user);
           res.status(200).json(aNewUser);
         });
       });
@@ -74,14 +72,20 @@ authRoutes.post('/signup', (req, res, next) => {
 });
 
 authRoutes.post('/login', (req, res, next) => {
-  passport.authenticate('local', (err, theUser, failureDetails) => {
+  const { username, password } = req.body;
+  passport.authenticate('local', (err, theUser) => {
     if (err) {
       res.status(500).json({ message: 'Something went wrong authenticating user' });
       return;
     }
 
+    if (!username || !password) {
+      res.json({ message: 'Please provide a username and password' });
+      return;
+    }
+
     if (!theUser) {
-      res.status(401).json(failureDetails);
+      res.json({ message: 'Username or password is wrong' });
       return;
     }
 
