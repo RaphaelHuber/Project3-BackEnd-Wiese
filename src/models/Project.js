@@ -9,11 +9,9 @@ const projectSchema = new Schema({
   country: String,
   energySource: { type: String, enum: ['Hydro', 'Solar', 'Wind', 'Bio'] },
   description: String,
-  responsiblePerson: {
-    name: String,
-    email: String,
-    telephone: Number
-  },
+  contactName: String,
+  contactEmail: String,
+  contactPhone: Number,
   minimumAmount: Number,
   targetAmount: Number,
   raisedAmount: { type: Number, default: 0 },
