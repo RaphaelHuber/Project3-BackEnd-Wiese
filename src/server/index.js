@@ -44,8 +44,7 @@ app.use(cors({
   credentials: true,
   origin: ['https://wiese.herokuapp.com'] // React app URL
 }));
-
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Endpoints
 // app.use('/', require('../endpoints/rootRoutes'));
