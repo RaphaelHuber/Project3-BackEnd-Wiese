@@ -1,5 +1,6 @@
 require('dotenv').config();
 const cors = require('cors');
+const path = require('path');
 
 // Server core
 const express = require('express');
@@ -41,15 +42,17 @@ app.use(passport.session());
 // CORS
 app.use(cors({
   credentials: true,
-  origin: ['http://localhost:8080'] // React app URL
+  origin: ['https://wiese.herokuapp.com'] // React app URL
 }));
 
 // Endpoints
-app.use('/', require('../endpoints/rootRoutes'));
+// app.use('/', require('../endpoints/rootRoutes'));
 app.use('/auth', require('../endpoints/auth-routes'));
 app.use('/users', require('../endpoints/userRoutes'));
 app.use('/projects', require('../endpoints/projectRoutes'));
 app.use('/investments', require('../endpoints/investmentRoutes'));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Starting the server.
 app.listen(HTTP_PORT, () => {
