@@ -28,7 +28,6 @@ router.get('/:id', (req, res, next) => {
 
 // POST
 router.post('/', (req, res, next) => {
-  console.log('MAAAAAAAAAAAAA', req.body);
   const { owner, name, country, energySource, description, minimumAmount, targetAmount, minimumInvestment, expectedReturn, investmentPeriod,paymentPeriod, periodicity, picture } = req.body;
   Project.create({ owner, name, country, energySource, description, minimumAmount, targetAmount, minimumInvestment, expectedReturn, investmentPeriod,paymentPeriod, periodicity, picture })
     .then((projectCreated) => {
