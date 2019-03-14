@@ -28,6 +28,12 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+app.use(require('node-sass-middleware')({
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
+  sourceMap: true
+}));
+
 // Session settings
 app.use(session({
   secret: 'Weird dotty chairs in darkness',
@@ -51,12 +57,6 @@ app.use('/auth', require('../endpoints/auth-routes'));
 app.use('/users', require('../endpoints/userRoutes'));
 app.use('/projects', require('../endpoints/projectRoutes'));
 app.use('/investments', require('../endpoints/investmentRoutes'));
-
-app.use(require('node-sass-middleware')({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  sourceMap: true
-}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
