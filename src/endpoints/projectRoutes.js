@@ -26,6 +26,18 @@ router.get('/:id', (req, res, next) => {
     });
 });
 
+// GET user's projects
+router.get('/myProjects/:userID', (req, res, next) => {
+  Project.find( {owner: req.params.userID} )
+    // .populate('owner', 'username')
+    .then((userProjects) => {
+      res.status(200).json(userProjects);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
 // POST
 router.post('/', (req, res, next) => {
   const { owner, name, country, energySource, description, minimumAmount, targetAmount, minimumInvestment, expectedReturn, investmentPeriod,paymentPeriod, periodicity, picture } = req.body;
