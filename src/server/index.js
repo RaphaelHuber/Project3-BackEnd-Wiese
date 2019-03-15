@@ -42,7 +42,7 @@ app.use(passport.session());
 // CORS
 app.use(cors({
   credentials: true,
-  origin: ['https://wiese.herokuapp.com'] // React app URL
+  origin: ['https://wiese.herokuapp.com']
 }));
 app.use(express.static(path.join(__dirname, '../public')));
 
