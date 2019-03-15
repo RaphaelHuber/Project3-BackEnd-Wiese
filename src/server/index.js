@@ -45,14 +45,18 @@ app.use(cors({
   origin: ['https://wiese.herokuapp.com']
 }));
 
+app.use(express.static(path.join(__dirname, '../public')));
+
 // Endpoints
-// app.use('/', require('../endpoints/rootRoutes'));
 app.use('/auth', require('../endpoints/auth-routes'));
 app.use('/users', require('../endpoints/userRoutes'));
 app.use('/projects', require('../endpoints/projectRoutes'));
 app.use('/investments', require('../endpoints/investmentRoutes'));
 
-app.use(express.static(path.join(__dirname, '../public')));
+// React drain
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
 // Starting the server.
 app.listen(HTTP_PORT, () => {
